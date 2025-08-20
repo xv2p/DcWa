@@ -14,7 +14,7 @@ async def on_message(message):
         return
     await message_queue.put(message.content)
 
-async def setup():
+async def setup(Token):
     global message_queue
     message_queue = asyncio.Queue()
-    await client.start("")
+    await client.start(Token)
